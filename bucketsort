@@ -1,0 +1,14 @@
+# *BUCKET SORT*        
+#         hash = {}
+#         for i in words:
+#             hash[i] = hash.get(i, 0) +1
+
+#         res = [[] for _ in range(len(words)+1)]
+#         for i,j in hash.items():
+#             res[j].append(i)
+#         ans = ""
+#         for i in range(len(res)-1, 0 ,-1):
+#             for char in res[i]:
+
+#                 ans += i*char
+#         return ans
