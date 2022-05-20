@@ -1,0 +1,26 @@
+from collections import deque
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        if source == destination:
+            return True
+        graph = dict()
+        for i in range(n):
+            graph[i] = []
+        for edge in edges:
+            graph[edge[0]].append(edge[1])
+            graph[edge[1]].append(edge[0])
+
+        
+        visited = set()
+        q = deque([source])
+        while q:
+            e = q.popleft()
+            for child in graph[e]:
+                if child == destination:
+                    return True
+                elif child not in visited:
+                    q.append(child)
+                    visited.add(child)
+
+        return False
+        
