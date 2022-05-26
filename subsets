@@ -1,0 +1,3 @@
+        res = [[]]
+        for e in nums:
+            res += [sub + [e] for sub in res]
